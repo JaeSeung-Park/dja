@@ -11,6 +11,9 @@
     <h2><a href="{{p.get_absolute_url}}">{{p.title}}</a></h2>
     <h4>{{p.created_at}}</h4>
     <p>{{p.content}}</p>
+    <div>
+        <img src="{{p.head_image.url}}" alt="image">
+    </div>
 {% endfor %}
 </body>
 </html>
