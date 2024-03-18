@@ -11,6 +11,10 @@
 <h1>{{post.title}}</h1>
 <h4>{{post.created_at}}</h4>
 <p>{{post.content}}</p>
+
+    {% if post.file_upload %}
+        <a href="{{post.file_upload.url}}" role="button" download>{{post.get_file_name}}</a>
+    {% endif %}
 <hr/>
 <h3>여기에 댓글 작성합니다.</h3>
 <div>
