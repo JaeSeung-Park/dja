@@ -14,7 +14,11 @@
 <hr/>
 <h3>여기에 댓글 작성합니다.</h3>
 <div>
-    <img src="{{post.head_image.url}}" alt="image">
+    {% if post.head_image %}
+        <img src="{{post.head_image.url}}" alt="{{post.title}} head_image">
+    {% else %}
+        <img src="https://picsum.photos/seed/{{post.id}}/800/200" alt="random_image">
+    {% endif %}
 </div>
 </body>
 </html>

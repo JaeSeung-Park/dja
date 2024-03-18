@@ -12,7 +12,11 @@
     <h4>{{p.created_at}}</h4>
     <p>{{p.content}}</p>
     <div>
-        <img src="{{p.head_image.url}}" alt="image">
+        {% if p.head_image %}
+            <img src="{{p.head_image.url}}" alt="{{p}} head_image">
+        {% else %}
+            <img src="https://picsum.photos/seed/{{p.id}}/800/200" alt="random_image">
+        {% endif %}
     </div>
 {% endfor %}
 </body>
