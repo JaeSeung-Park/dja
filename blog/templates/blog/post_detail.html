@@ -9,14 +9,19 @@
   <a href="/blog/">Blog</a>
 </nav>
 <h1>{{post.title}}</h1>
-<h4>{{post.created_at}}</h4>
+<h5>{{post.hook_text}}</h5>
+<p>by
+    <a href="#">creator name(개발예정)</a>
+</p>
 <p>{{post.content}}</p>
 
     {% if post.file_upload %}
+    <p>첨부파일:
         <a href="{{post.file_upload.url}}" role="button" download>{{post.get_file_name}}</a>
+    </p>
     {% endif %}
+<h4>{{post.created_at}}</h4>
 <hr/>
-<h3>여기에 댓글 작성합니다.</h3>
 <div>
     {% if post.head_image %}
         <img src="{{post.head_image.url}}" alt="{{post.title}} head_image">
@@ -24,5 +29,15 @@
         <img src="https://picsum.photos/seed/{{post.id}}/800/200" alt="random_image">
     {% endif %}
 </div>
+<hr/>
+<h3>여기에 댓글 작성합니다.</h3>
+<hr/>
+<h3>여기에 댓글 작성합니다.</h3>
+<hr/>
+<h3>여기에 댓글 작성합니다.</h3>
+<hr/>
+<h3>여기에 댓글 작성합니다.</h3>
+<hr/>
+<h3>...</h3>
 </body>
 </html>
