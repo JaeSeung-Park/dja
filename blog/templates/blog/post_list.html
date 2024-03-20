@@ -11,8 +11,10 @@
   <a href="/about_me/">About me</a>
 </nav>
 
-</hr>
+<hr/>
 <div>
+<h1>Blog</h1>
+<hr/>
     <h4>Categories</h4>
     <ul>
         {% for category in categories %}
@@ -25,10 +27,8 @@
         </li>
     </ul>
 </div>
-</hr>
 
 <div id="main-area">
-<h1>Blog</h1>
 {% if post_list.exists %}
     {% for p in post_list %}
         <hr/>
