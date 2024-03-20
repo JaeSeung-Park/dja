@@ -17,10 +17,10 @@
         <hr/>
         <h2><a href="{{p.get_absolute_url}}">{{p.title}}</a></h2>
         {% if p.hook_text %}
-            <h5>{{p.hook_text}}</h5>
+            <h3>{{p.hook_text}}</h3>
         {% endif %}
-        <p>by
-        <a href="#">creator name(개발예정)</a>
+        <p>
+            <h4>created by <a href="#">{{p.author | upper}}</a></h4>
         </p>
         <p>{{p.content | truncatewords:90}}</p>
         <div>
@@ -30,7 +30,7 @@
                 <img src="https://picsum.photos/seed/{{p.id}}/800/200" alt="random_image">
             {% endif %}
         </div>
-        <h4>{{p.created_at}}</h4>
+        <h4>This post was created at {{p.created_at}}</h4>
     {% endfor %}
 {% else %}
     <h3>아직 게시물이 없습니다.</h3>
