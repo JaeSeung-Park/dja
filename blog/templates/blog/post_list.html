@@ -15,7 +15,10 @@
 <div>
 <h1>Blog</h1>
     {% if category %}
-    <p><h2>{{category}}</h2></p>
+    <h2>{{category}}</h2>
+    {% endif %}
+    {% if tag %}
+    <h2>{{tag}} ({{tag.post_set.count}})</h2>
     {% endif %}
 <hr/>
     <h4>Categories</h4>
