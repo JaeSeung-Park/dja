@@ -48,12 +48,12 @@
             <h4>created by <a href="#">{{p.author | upper}}</a></h4>
         </p>
         <p>{{p.content | truncatewords:90}}</p>
-        {% if p.tags.exits %}
-        {% for tag in p.tags.iterator %}
-        <a href="{{tag.get_absolute_url}}">{{tag}}</a>
-        {% endfor %}
-        <br/>
-        <br/>
+        {% if p.tags.exists %}
+            {% for tag in p.tags.iterator %}
+            <a href="{{tag.get_absolute_url}}">#{{tag}}</a>
+            {% endfor %}
+            <br/>
+            <br/>
         {% endif %}
         <div>
             {% if p.head_image %}
