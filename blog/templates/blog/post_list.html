@@ -15,7 +15,7 @@
 <div>
 <h1>Blog</h1>
     {% if category %}
-    <p>{{category}}</p>
+    <p><h2>{{category}}</h2></p>
     {% endif %}
 <hr/>
     <h4>Categories</h4>
@@ -26,7 +26,7 @@
         </li>
         {% endfor %}
         <li>
-            <a href="/blog/category/no_category/">미분류 ({{category.post_set.count}})</a>
+            <a href="/blog/category/no_category/">미분류 ({{no_category_post_count}})</a>
         </li>
     </ul>
 </div>
@@ -48,6 +48,13 @@
             <h4>created by <a href="#">{{p.author | upper}}</a></h4>
         </p>
         <p>{{p.content | truncatewords:90}}</p>
+        {% if p.tags.exits %}
+        {% for tag in p.tags.iterator %}
+        <a href="{{tag.get_absolute_url}}">{{tag}}</a>
+        {% endfor %}
+        <br/>
+        <br/>
+        {% endif %}
         <div>
             {% if p.head_image %}
                 <img src="{{p.head_image.url}}" alt="{{p}} head_image">
