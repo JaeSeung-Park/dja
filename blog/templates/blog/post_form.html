@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post - Blog</title>
+</head>
+<body>
+<nav>
+  <a href="/">Main</a>
+  <a href="/blog/">Blog</a>
+  <a href="/about_me/">About me</a>
+</nav>
+<div id="main-area">
+  {% block main_area %}
+  <h1>Create New Post</h1>
+  <hr/>
+  <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+      {{form}}
+    </table>
+    <button type="submit">Submit</button>
+  </form>
+  {% endblock %}
+</div>
+</body>
+</html>
