@@ -14,6 +14,11 @@
 <hr/>
 <div>
 <h1>Blog</h1>
+    {% if user.is_authenticated %}
+        {% if user.is_superuser or user.is_staff %}
+            <button><a href="/blog/create_post/" role="button">New Post</a></button>
+        {% endif %}
+    {% endif %}
     {% if category %}
     <h2>{{category}}</h2>
     {% endif %}
