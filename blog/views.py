@@ -32,7 +32,7 @@ class PostList(ListView):
 
 def category_page(requset, slug):
     if slug == 'no_category':
-        category = '미분류'
+        category = 'None'
         post_list = Post.objects.filter(category=None)
     else:
         category = Category.objects.get(slug=slug)
